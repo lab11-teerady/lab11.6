@@ -1,23 +1,5 @@
 services:
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
+  web:
+    image: teeradui/234-deploylab11-06:latest
     ports:
-      - "3308:3308"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  phpmyadmin:
-    image: phpmyadmin:latest
-    depends_on:
-      - mysql
-    environment:
-      PMA_HOST: mysql
-      PMA_USER: root
-      PMA_PASSWORD: rootpassword
-    ports:
-      - "9001:80"
-
-volumes:
-  mysql_data:
+      - "8109:80"
